@@ -1,12 +1,37 @@
 const connection = require('../database/connection') 
 
 const index = (req, res)=> {
-    res.send('tutti i film')
+    
+    const sql = '';
+
+    connection.query(sql, (err, resu) => {
+         if (err) {
+        return res.status(500).json({
+        error: 'il database ha fallito'})
+    };
+
+    req.json(resu)
+
+    })
 }
 
 const show = (req, res)=> {
-    res.send('il singolo film con il suo id: ' + req.params.id)
-}
+
+    const id = req.params.id
+    
+    const sql = '';
+
+    connection.query(sql, [id], (err, resu) => {
+        if (err) return res.status(500).json({
+            error: 'mi spiace oggi leggerai un libro, anzichè guardare un film'
+        });
+        if (resu.length === 0) return res.status(404).json({error: 'non va'});
+
+
+        res.json(resu[0])
+    })
+
+};
 
 module.exports = {
     index,
