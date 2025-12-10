@@ -19,7 +19,7 @@ const show = (req, res)=> {
 
     const id = req.params.id
     
-    const sql = '';
+    const sql = 'SELECT * FROM movies WHERE id = ?';
 
     connection.query(sql, [id], (err, resu) => {
         if (err) return res.status(500).json({
