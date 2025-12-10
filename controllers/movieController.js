@@ -2,7 +2,7 @@ const connection = require('../database/connection')
 
 const index = (req, res)=> {
     
-    const sql = '';
+    const sql = 'SELECT * FROM movies';
 
     connection.query(sql, (err, resu) => {
          if (err) {
