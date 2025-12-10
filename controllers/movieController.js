@@ -21,6 +21,12 @@ const show = (req, res)=> {
     
     const sql = 'SELECT * FROM movies WHERE id = ?';
 
+    const review = `SELECT reviews.* 
+FROM movies
+JOIN reviews
+ON reviews.movie_id = movies.id
+WHERE reviews.movie_id = ?`
+
     connection.query(sql, [id], (err, resu) => {
         if (err) return res.status(500).json({
             error: 'mi spiace oggi leggerai un libro, anzichè guardare un film'
