@@ -1,17 +1,12 @@
 const express = require('express')
 const router = express.Router()
+const movieControllers = require('../controllers/movieController')
 
 
 
-router.get('/', (req, res)=> {
-    console.log('tutti i film');
-    
-})
+router.get('/', movieControllers.index );
 
 // show
-router.get('/:id', (req, res) => {
-    console.log('singolo film');
-    
-});
+router.get('/:id', movieControllers.show);
 
 module.exports = router 
