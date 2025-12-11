@@ -10,7 +10,7 @@ const index = (req, res)=> {
         error: 'il database ha fallito'})
     };
 
-    req.json(resu)
+    res.json(resu)
 
     })
 }

@@ -8,7 +8,7 @@ const cors = require('cors')
 //attivazione del cors
 
 app.use(cors({
-    origin: 'http://localhost:5173/'
+    origin: 'http://localhost:5173'
 }))
 
 app.use(express.json({}))
