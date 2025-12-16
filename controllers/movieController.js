@@ -50,6 +50,15 @@ const show = (req, res)=> {
 
 };
 
+const storeReview = (req, res => {
+
+    // const movieId = Number(req.params.id)
+    // const {name, review, rating} = req.body 
+    console.log('creazione della recensione');
+    
+})
+
+
 module.exports = {
     index,
     show
